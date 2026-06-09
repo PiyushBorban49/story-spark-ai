@@ -102,7 +102,7 @@ export default function AnalyticsDashboard() {
     </div>
   );
 
-  const maxHour = hours.reduce((max, h) => h.count > max.count ? h : max, hours[0]);
+  const maxHour = hours.reduce((max, h) => h.count > max.count ? h : max, hours[0] || { hour: 0, count: 0 });
 
   // Derived Data
   const storyLengthData = overview?.storyLengths ? [
